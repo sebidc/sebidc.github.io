@@ -88,3 +88,28 @@
   search.addEventListener('input', update);
   update();
 })();
+
+(() => {
+  const buttons = [...document.querySelectorAll('[data-theme-toggle]')];
+  function apply(theme) {
+    const light = theme === 'light';
+    document.documentElement.dataset.theme = light ? 'light' : 'dark';
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', light ? '#f2efdf' : '#333c43');
+    for (const button of buttons) {
+      const label = light ? 'Switch to dark mode' : 'Switch to light mode';
+      button.setAttribute('aria-label', label);
+      button.title = label;
+      button.querySelector('.theme-icon').textContent = light ? '☾' : '☀';
+      button.querySelector('.theme-label').textContent = light ? 'Dark mode' : 'Light mode';
+    }
+  }
+  apply(document.documentElement.dataset.theme);
+  buttons.forEach(button => button.addEventListener('click', () => {
+    const theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    apply(theme);
+    try { localStorage.setItem('sebi-theme', theme); } catch { /* Mode still works for this visit. */ }
+  }));
+  window.addEventListener('storage', event => {
+    if (event.key === 'sebi-theme') apply(event.newValue === 'light' ? 'light' : 'dark');
+  });
+})();

@@ -15,3 +15,14 @@
 
 .about-emoji-art{min-height:420px;margin-bottom:24px;overflow:clip}.about-emoji-art img{width:80%;max-width:340px;margin:0;transform:rotate(-5deg)}.about-emoji-art .tag-video{right:6px;top:105px}.about-emoji-art .tag-code{left:6px;bottom:48px}.about-emoji-art .star-one{right:24px;top:14px}.about-emoji-art .label-top{left:24px;top:22px}.portrait-card{min-width:0}
 @media(max-width:700px){.about-emoji-art{min-height:370px;margin-bottom:20px}.about-emoji-art img{max-height:290px}.about-emoji-art .tag-video{top:80px}.about-emoji-art .tag-code{bottom:35px}}
+
+:root[data-theme="light"]{color-scheme:light;--bg:#f2efdf;--dim:#e5e1cf;--panel:#faf7eb;--surface:#eae6d5;--line:#c4c6b5;--fg:#3d4841;--muted:#636e60;--green:#527338;--yellow:#8a661b;--blue:#326d67}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:42px;min-height:42px;border:1px solid var(--line);border-radius:30px;padding:8px 13px;background:var(--panel);color:var(--fg);white-space:nowrap;font:700 12px Gramatika,Arial,sans-serif;cursor:pointer}.theme-toggle:hover{background:var(--surface)}.theme-icon{font-family:Arial,sans-serif;font-size:20px;line-height:1}
+:root[data-theme="light"] .primary{color:#faf7eb}:root[data-theme="light"] .primary:hover{background:#45642e}:root[data-theme="light"] .filter.active,:root[data-theme="light"] .filter[aria-pressed=true]{color:#faf7eb}:root[data-theme="light"] .skip-link{color:#faf7eb}
+@media(max-width:1000px){.theme-toggle{width:42px;padding:8px}.theme-label{display:none}}
+@media print{.theme-toggle{display:none}}
+
+.header-actions{display:flex;align-items:center;gap:16px}:root[data-theme="light"] nav a[aria-current=page]{color:#faf7eb}:root[data-theme="light"] .banner-star{color:#52733812}
+@media(max-width:1000px){.header-actions{gap:10px}nav a{padding-inline:12px}}
+@media(max-width:700px){.site-header{display:grid;grid-template-columns:1fr auto;min-height:126px;gap:18px}.header-actions{display:contents}.site-header .wordmark{grid-column:1;grid-row:1}.site-header .theme-toggle{grid-column:2;grid-row:1}.site-header nav{grid-column:1/-1;grid-row:2}}
+@media(max-width:700px){.site-header nav{min-width:0}.site-header nav a{padding:8px 9px;font-size:11px}}
