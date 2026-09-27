@@ -14,7 +14,7 @@
       cards.forEach(card => {
         const active = card.dataset.available === 'true';
         if (active) available++;
-        card.hidden = !((!onlyAvailable || active) && card.dataset.name.toLocaleLowerCase().includes(query));
+        card.hidden = !((!onlyAvailable || active) && `${card.dataset.name} ${card.dataset.username || ''}`.toLocaleLowerCase().includes(query));
         if (!card.hidden) visible++;
       });
       document.querySelector('.social-count').textContent = `${visible} ${visible === 1 ? 'platform' : 'platforms'} · ${available} ${available === 1 ? 'available link' : 'available links'}`;
@@ -31,16 +31,13 @@
       updateSocials();
     }));
     updateSocials();
-    fetch('/content/socials.md').then(response => {
-      if (!response.ok) throw new Error('Social links unavailable');
-      return response.text();
-    }).then(markdown => {
+    Promise.all([fetch('/content/socials.md').then(response => { if (!response.ok) throw new Error('Social links unavailable'); return response.text(); }), fetch('/assets/social-icons.json').then(response => { if (!response.ok) throw new Error('Social icons unavailable'); return response.json(); })]).then(([markdown, icons]) => {
       const cards = [];
       for (const line of markdown.split('\n')) {
         if (!line.startsWith('|')) continue;
         const parts = line.replace(/^\||\|$/g, '').split('|').map(value => value.trim());
-        if (parts.length !== 2) continue;
-        const [label, value] = parts;
+        if (parts.length !== 3) continue;
+        const [label, username, value] = parts;
         if (label === 'Platform' || label.startsWith('---')) continue;
         let url;
         try { url = new URL(value); } catch { /* A placeholder has no URL. */ }
@@ -48,15 +45,18 @@
         const card = document.createElement(available ? 'a' : 'div');
         card.className = `social-card${available ? '' : ' placeholder'}`;
         card.dataset.name = label;
+        card.dataset.username = username && username !== 'PLACEHOLDER' ? username : '@username';
         card.dataset.available = String(available);
         if (available) {
           card.href = url.href;
           if (url.protocol === 'https:') { card.target = '_blank'; card.rel = 'noopener noreferrer'; }
         }
-        const symbol = document.createElement('span'); symbol.className = 'social-symbol'; symbol.textContent = available ? '↗' : '+'; symbol.setAttribute('aria-hidden', 'true');
+        const symbol = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); symbol.classList.add('social-icon'); symbol.setAttribute('viewBox', '0 0 24 24'); symbol.setAttribute('aria-hidden', 'true');
+        const use = document.createElementNS('http://www.w3.org/2000/svg', 'use'); use.setAttribute('href', `/assets/social-icons.svg#${icons[label] || 'icon-personalwebsite'}`); symbol.append(use);
         const name = document.createElement('h3'); name.textContent = label;
         const status = document.createElement('span'); status.className = 'social-status'; status.textContent = available ? (url.protocol === 'mailto:' ? 'Send an email' : 'Visit profile') : 'Link coming soon';
-        card.append(symbol, name, status); cards.push(card);
+        const handle = document.createElement('span'); handle.className = 'social-username'; handle.textContent = card.dataset.username;
+        card.append(symbol, name, handle, status); cards.push(card);
       }
       socialGrid.replaceChildren(...cards);
       updateSocials();
@@ -111,5 +111,17 @@
   }));
   window.addEventListener('storage', event => {
     if (event.key === 'sebi-theme') apply(event.newValue === 'light' ? 'light' : 'dark');
+  });
+})();
+
+(() => {
+  document.querySelectorAll('[data-emoji-play]').forEach(button => {
+    const image = button.querySelector('img');
+    button.style.setProperty('--sticker-image', `url("${image.getAttribute('src')}")`);
+    button.addEventListener('click', () => {
+      button.classList.remove('celebrate');
+      void button.offsetWidth;
+      button.classList.add('celebrate');
+    });
   });
 })();

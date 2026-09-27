@@ -16,7 +16,7 @@ Project sites such as `/sebi.emojis/` are published from their own repositories.
 
 ## Update social links
 
-Edit [content/socials.md](content/socials.md), replacing `PLACEHOLDER` with a public HTTPS URL. Email accepts a `mailto:` link. Empty and placeholder entries appear as “Link coming soon”. Remove a row to hide a platform; add a row for any additional service.
+Edit [content/socials.md](content/socials.md), replacing the Username placeholder with your handle and the URL placeholder with a public HTTPS URL. Email accepts a `mailto:` link. Empty and placeholder entries appear as “Link coming soon”. Remove a row to hide a platform; add a row for any additional service.
 
 The live Socials page reads this file automatically. To also update the static fallback (used without JavaScript), rebuild the pages:
 
@@ -37,3 +37,5 @@ Open http://localhost:8766/.
 ## Design
 
 Everforest Dark Soft colors, Agrandir titles, and Gramatika body text. Font files and original mascot were carried over from Sebi’s existing portfolio and emoji gallery. The previous Framer assets remain available in the repository for reference; the new pages use `/assets/`.
+
+Social SVG icons are bundled locally from Simple Icons and Font Awesome Free. Source and license information is in `assets/icon-licenses/`.

@@ -1,0 +1,88 @@
+Brand SVGs: Simple Icons 16.33.0 (https://github.com/simple-icons/simple-icons), and Font Awesome Free 7.3.1 (https://github.com/FortAwesome/Font-Awesome). See included licenses. Icons use site theme colors. Platforms without an available brand mark use a generic link icon.
+
+- GitHub: Simple Icons
+- Email: Font Awesome
+- Instagram: Simple Icons
+- Facebook: Simple Icons
+- Messenger: Simple Icons
+- Threads: Simple Icons
+- TikTok: Simple Icons
+- YouTube: Simple Icons
+- X / Twitter: Simple Icons
+- Bluesky: Simple Icons
+- Mastodon: Simple Icons
+- LinkedIn: Font Awesome
+- Fiverr: Simple Icons
+- Upwork: Simple Icons
+- Behance: Simple Icons
+- Dribbble: Simple Icons
+- Adobe Portfolio: Font Awesome (generic link)
+- ArtStation: Simple Icons
+- Pinterest: Simple Icons
+- Reddit: Simple Icons
+- Discord: Simple Icons
+- Telegram: Simple Icons
+- WhatsApp: Simple Icons
+- Viber: Simple Icons
+- LINE: Simple Icons
+- Snapchat: Simple Icons
+- Twitch: Simple Icons
+- Kick: Simple Icons
+- Spotify: Simple Icons
+- SoundCloud: Simple Icons
+- Bandcamp: Simple Icons
+- Letterboxd: Simple Icons
+- Goodreads: Simple Icons
+- Tumblr: Simple Icons
+- Medium: Simple Icons
+- Substack: Simple Icons
+- Ko-fi: Simple Icons
+- Buy Me a Coffee: Simple Icons
+- Patreon: Simple Icons
+- Carrd: Simple Icons
+- Linktree: Simple Icons
+- Personal website: Font Awesome
+- Flickr: Simple Icons
+- 500px: Simple Icons
+- VSCO: Simple Icons
+- DeviantArt: Simple Icons
+- Cara: Font Awesome (generic link)
+- Pixiv: Simple Icons
+- Vimeo: Simple Icons
+- Dailymotion: Simple Icons
+- Rumble: Simple Icons
+- Bilibili: Simple Icons
+- Xiaohongshu / RED: Simple Icons
+- Weibo: Font Awesome
+- WeChat: Simple Icons
+- QQ: Simple Icons
+- KakaoTalk: Simple Icons
+- Signal: Simple Icons
+- Clubhouse: Simple Icons
+- Quora: Simple Icons
+- Stack Overflow: Simple Icons
+- DEV Community: Simple Icons
+- Hashnode: Simple Icons
+- GitLab: Simple Icons
+- CodePen: Font Awesome
+- Replit: Simple Icons
+- itch.io: Simple Icons
+- Steam: Simple Icons
+- Xbox: Font Awesome
+- PlayStation: Simple Icons
+- Last.fm: Simple Icons
+- Apple Music: Simple Icons
+- Mixcloud: Simple Icons
+- Strava: Simple Icons
+- BeReal: Simple Icons
+- Lemon8: Font Awesome (generic link)
+- SpaceHey: Font Awesome (generic link)
+- Nostr: Font Awesome (generic link)
+- Pixelfed: Simple Icons
+- PeerTube: Simple Icons
+- Misskey: Simple Icons
+- Matrix: Simple Icons
+- Gravatar: Simple Icons
+- Product Hunt: Simple Icons
+- Are.na: Font Awesome (generic link)
+- Notion: Simple Icons
